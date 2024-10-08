@@ -4,7 +4,8 @@ import React from 'react'
 export default function Home() {
   return (
     <View>
-      <Text>Home</Text>
+      <Text>Index</Text>
+      <button>CLICK HERE</button>
     </View>
   )
 }
