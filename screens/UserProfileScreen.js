@@ -3,7 +3,6 @@ import {
   View, 
   Text, 
   Switch, 
-  Button, 
   StyleSheet, 
   Image, 
   TouchableOpacity 
@@ -19,7 +18,7 @@ const UserProfile = () => {
     <View style={styles.container}>
       {/* Gradient Header */}
       <LinearGradient 
-        colors={['#6200ee', '#3f51b5']}
+        colors={['#00008B', '#3f51b5']}
         style={styles.header}
       >
         <Image 
@@ -33,7 +32,7 @@ const UserProfile = () => {
       {/* User Settings Section */}
       <View style={styles.settingsContainer}>
         <View style={styles.settingRow}>
-          <FontAwesome name="bell" size={24} color="#6200ee" />
+          <FontAwesome name="bell" size={24} color="#00008B" />
           <Text style={styles.settingText}>Enable Notifications</Text>
           <Switch 
             value={notificationsEnabled} 
@@ -42,7 +41,7 @@ const UserProfile = () => {
         </View>
 
         <View style={styles.settingRow}>
-          <MaterialIcons name="beach-access" size={24} color="#6200ee" />
+          <MaterialIcons name="beach-access" size={24} color="#00008B" />
           <Text style={styles.settingText}>Off-Day Toggle</Text>
           <Switch 
             value={offDayToggle} 
@@ -65,8 +64,10 @@ const UserProfile = () => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#f0f0f0' },
-  
+  container: { 
+    flex: 1, 
+    backgroundColor: '#f0f0f0' 
+  },
   // Header with gradient background and profile image
   header: { 
     alignItems: 'center', 
@@ -93,7 +94,6 @@ const styles = StyleSheet.create({
     color: 'white', 
     marginTop: 4 
   },
-
   // Settings Section
   settingsContainer: { 
     margin: 20, 
@@ -113,14 +113,13 @@ const styles = StyleSheet.create({
     marginLeft: 10, 
     fontSize: 18 
   },
-
   // Action Buttons
   actionButtons: { 
     marginHorizontal: 20, 
     marginTop: 20 
   },
   button: { 
-    backgroundColor: '#6200ee', 
+    backgroundColor: '#00008B', 
     paddingVertical: 15, 
     borderRadius: 30, 
     alignItems: 'center', 

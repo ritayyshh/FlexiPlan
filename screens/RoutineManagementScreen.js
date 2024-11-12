@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, FlatList, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const routines = [
   { id: '1', startDate: '2024-10-01', endDate: '2024-10-07', data: 'Work and gym routine' },
@@ -9,19 +10,30 @@ const routines = [
 const RoutineManagement = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Your Routines</Text>
-      <FlatList 
+      <View style={styles.header}>
+        <Text style={styles.headerText}>Your Routines</Text>
+      </View>
+      <FlatList
         data={routines}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <TouchableOpacity style={styles.routine} onPress={() => alert(`Details for ${item.data}`)}>
-            <Text style={styles.routineTitle}>{item.data}</Text>
-            <Text style={styles.dateText}>Start: {item.startDate}</Text>
-            <Text style={styles.dateText}>End: {item.endDate}</Text>
+            <View style={styles.iconContainer}>
+              <Icon name="calendar-outline" size={24} color="#00008B" />
+            </View>
+            <View style={styles.textContainer}>
+              <Text style={styles.routineTitle}>{item.data}</Text>
+              <Text style={styles.dateText}>Start: {item.startDate}</Text>
+              <Text style={styles.dateText}>End: {item.endDate}</Text>
+            </View>
           </TouchableOpacity>
         )}
+        contentContainerStyle={styles.listContent}
       />
-      <Button title="Add Routine" onPress={() => alert('Create New Routine')} color="#1E90FF" />
+      <TouchableOpacity style={styles.addButton} onPress={() => alert('Create New Routine')}>
+        <Icon name="add-circle-outline" size={24} color="white" />
+        <Text style={styles.buttonText}>Add Routine</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -29,34 +41,77 @@ const RoutineManagement = () => {
 const styles = StyleSheet.create({
   container: { 
     flex: 1, 
-    padding: 20, 
-    backgroundColor: '#f5f5f5' // Light background color
+    backgroundColor: '#f0f2f5'
   },
-  title: { 
-    fontSize: 28, 
-    fontWeight: 'bold', 
-    marginBottom: 20, 
-    color: '#333' // Darker color for better contrast
+  header: {
+    backgroundColor: '#00008B',
+    width: '100%', // Ensures it stretches across the screen
+    paddingTop: 40, // Adjust this to set the header height
+    paddingBottom: 20, // Bottom padding for the header
+    paddingHorizontal: 20, // Adds side padding
+    justifyContent: 'center', // Vertically center the text
+    alignItems: 'center', // Horizontally center the text
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    elevation: 5,
+    marginBottom: 20,
   },
+  headerText: {
+    color: 'white',
+    fontSize: 28, // Adjust font size for better visual hierarchy
+    fontWeight: 'bold',
+    textAlign: 'center', // Ensure the text is centered
+  },
+  listContent: { paddingBottom: 20 },
   routine: { 
-    backgroundColor: '#ffffff', // White background for routine items
-    borderRadius: 10, // Rounded corners
-    padding: 15, // Padding for inner content
-    marginBottom: 15, // Space between items
-    shadowColor: '#000', // Shadow for elevation effect
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#ffffff',
+    borderRadius: 10,
+    padding: 15,
+    marginBottom: 15,
+    shadowColor: '#000',
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.2,
     shadowRadius: 3,
-    elevation: 2, // Android shadow effect
+    elevation: 2,
+  },
+  iconContainer: {
+    marginRight: 15,
+  },
+  textContainer: {
+    flex: 1,
   },
   routineTitle: { 
     fontSize: 18, 
     fontWeight: 'bold', 
-    color: '#007BFF' // Blue color for routine title
+    color: '#00008B'
   },
   dateText: { 
-    color: '#666', // Grey color for date text
-    marginTop: 5 // Space between title and date
+    color: '#666',
+    marginTop: 5
+  },
+  addButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#00008B',
+    padding: 15,
+    borderRadius: 10,
+    justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    elevation: 5,
+  },
+  buttonText: {
+    color: 'white',
+    marginLeft: 10,
+    fontSize: 16,
   },
 });
 

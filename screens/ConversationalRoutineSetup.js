@@ -9,6 +9,7 @@ import {
   StyleSheet, 
   ActivityIndicator 
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const ConversationalRoutineSetup = () => {
   const [messages, setMessages] = useState([
@@ -75,7 +76,7 @@ const ConversationalRoutineSetup = () => {
           placeholder="Type your response..."
         />
         <TouchableOpacity style={styles.sendButton} onPress={sendMessage}>
-          <Text style={styles.sendButtonText}>Send</Text>
+          <Icon name="send-outline" size={24} color="white" />
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
@@ -83,27 +84,88 @@ const ConversationalRoutineSetup = () => {
 };
 
 const styles = StyleSheet.create({
-    container: { flex: 1, backgroundColor: '#f7f7f7' },
-    header: { padding: 15, backgroundColor: '#6200ee', alignItems: 'center' },
-    headerText: { color: 'white', fontSize: 18, fontWeight: 'bold' },
-    chatContainer: { padding: 10, paddingBottom: 80 },
-    messageBubble: { marginVertical: 5, padding: 10, borderRadius: 10, maxWidth: '80%' },
-    
-    // Darkened AI bubble and changed text color for readability
-    aiBubble: { backgroundColor: '#444', alignSelf: 'flex-start' },
-    userBubble: { backgroundColor: '#6200ee', alignSelf: 'flex-end' },
-    
-    // Ensure the text is readable on both AI and user bubbles
-    messageText: { color: '#fff', fontSize: 16, lineHeight: 22 },
-  
-    inputContainer: {
-      position: 'absolute', bottom: 0, flexDirection: 'row', padding: 10, backgroundColor: 'white',
-      borderTopWidth: 1, borderTopColor: '#ddd',
-    },
-    input: { flex: 1, borderColor: '#ddd', borderWidth: 1, borderRadius: 25, paddingHorizontal: 15 },
-    sendButton: { backgroundColor: '#6200ee', padding: 10, borderRadius: 25, marginLeft: 10 },
-    sendButtonText: { color: 'white', fontWeight: 'bold' },
-    typingIndicator: { flexDirection: 'row', alignItems: 'center', padding: 10 },
-    typingText: { marginLeft: 10, color: '#555' },
+  container: { 
+    flex: 1, 
+    backgroundColor: '#f7f7f7' 
+  },
+  header: {
+    backgroundColor: '#00008B',
+    width: '100%',
+    paddingTop: 40,
+    paddingBottom: 20,
+    paddingHorizontal: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    elevation: 5,
+  },
+  headerText: {
+    color: 'white',
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  chatContainer: { 
+    padding: 10, 
+    paddingBottom: 80 
+  },
+  messageBubble: { 
+    marginVertical: 5, 
+    padding: 10, 
+    borderRadius: 10, 
+    maxWidth: '80%' 
+  },
+  aiBubble: { 
+    backgroundColor: '#444', 
+    alignSelf: 'flex-start' 
+  },
+  userBubble: { 
+    backgroundColor: '#00008B', 
+    alignSelf: 'flex-end' 
+  },
+  messageText: { 
+    color: '#fff', 
+    fontSize: 16, 
+    lineHeight: 22 
+  },
+  inputContainer: {
+    position: 'absolute', 
+    bottom: 0, 
+    flexDirection: 'row', 
+    padding: 10, 
+    backgroundColor: 'white',
+    borderTopWidth: 1, 
+    borderTopColor: '#ddd',
+  },
+  input: { 
+    flex: 1, 
+    borderColor: '#ddd', 
+    borderWidth: 1, 
+    borderRadius: 25, 
+    paddingHorizontal: 15 
+  },
+  sendButton: { 
+    backgroundColor: '#00008B', 
+    padding: 10, 
+    borderRadius: 25, 
+    marginLeft: 10, 
+    alignItems: 'center', 
+    justifyContent: 'center' 
+  },
+  typingIndicator: { 
+    flexDirection: 'row', 
+    alignItems: 'center', 
+    padding: 10 
+  },
+  typingText: { 
+    marginLeft: 10, 
+    color: '#555' 
+  },
 });
+
 export default ConversationalRoutineSetup;

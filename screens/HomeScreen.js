@@ -58,7 +58,6 @@ export default function HomePage({ route }) {
       </View>
     </Animated.View>
   );
-  
 
   return (
     <View style={styles.container}>
@@ -80,15 +79,15 @@ export default function HomePage({ route }) {
 
       <ScrollView style={styles.content}>
         <Text style={styles.welcomeText}>
-          <Icon name="person-circle-outline" size={30} color="#FFC107" /> Welcome back!
+          <Icon name="person-circle-outline" size={30} color="#00008B" /> Welcome back!
         </Text>
         <Text style={styles.dateText}>
-          <Icon name="calendar-outline" size={20} color="#FFC107" /> Today is {currentDate}
+          <Icon name="calendar-outline" size={20} color="#00008B" /> Today is {currentDate}
         </Text>
 
         <View style={styles.card}>
           <Text style={styles.cardTitle}>
-            <Icon name="stats-chart-outline" size={20} color="#FFC107" /> Your Stats
+            <Icon name="stats-chart-outline" size={20} color="#00008B" /> Your Stats
           </Text>
           <Text style={styles.cardContent}>Tasks Completed: 5</Text>
           <Text style={styles.cardContent}>Points Earned: 100</Text>
@@ -107,7 +106,7 @@ export default function HomePage({ route }) {
 
         <View style={styles.card}>
           <Text style={styles.cardTitle}>
-            <Icon name="time-outline" size={20} color="#FFC107" /> Recent Activity
+            <Icon name="time-outline" size={20} color="#00008B" /> Recent Activity
           </Text>
           <Text style={styles.cardContent}>• Completed "Project A" task</Text>
           <Text style={styles.cardContent}>• Earned 50 points</Text>
@@ -116,7 +115,7 @@ export default function HomePage({ route }) {
 
         <View style={styles.card}>
           <Text style={styles.cardTitle}>
-            <Icon name="people-outline" size={20} color="#FFC107" /> Community
+            <Icon name="people-outline" size={20} color="#00008B" /> Community
           </Text>
           <Text style={styles.cardContent}>Connect with like-minded individuals</Text>
 
@@ -141,16 +140,13 @@ export default function HomePage({ route }) {
   );
 }
 
-// Styles remain the same
-
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f0f2f5',
   },
   header: {
-    backgroundColor: '#FFC107',
+    backgroundColor: '#00008B',
     padding: 20,
     paddingTop: 50,
     borderBottomLeftRadius: 20,
@@ -181,52 +177,51 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     zIndex: 2,
   },
-    sidebar: {
-      width: 250,
-      backgroundColor: '#FFC107',
-      padding: 20,
-      height: '100%',
-      position: 'absolute',
-      left: 0,
-      top: 0,
-      zIndex: 3,
-      borderTopRightRadius: 20,
-      borderBottomRightRadius: 20,
-      shadowColor: '#000',
-      shadowOffset: { width: 0, height: 4 },
-      shadowOpacity: 0.5,
-      shadowRadius: 10,
-      elevation: 5,
-    },
-    sidebarVisible: {
-      transform: [{ translateX: 0 }],
-    },
-    sidebarHidden: {
-      transform: [{ translateX: -250 }],
-    },
-    closeSidebarButton: {
-      alignSelf: 'flex-end',
-      marginBottom: 20,
-    },
-    menuItems: {
-      flex: 1,
-      justifyContent: 'center',
-    },
-    menuItem: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      paddingVertical: 15,
-      paddingHorizontal: 10,
-      borderRadius: 10,
-      backgroundColor: 'black',
-      marginBottom: 10,
-    },
-    menuText: {
-      color: 'white',
-      fontSize: 18,
-      marginLeft: 10,
-    },
-  
+  sidebar: {
+    width: 250,
+    backgroundColor: '#00008B',
+    padding: 20,
+    height: '100%',
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    zIndex: 3,
+    borderTopRightRadius: 20,
+    borderBottomRightRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.5,
+    shadowRadius: 10,
+    elevation: 5,
+  },
+  sidebarVisible: {
+    transform: [{ translateX: 0 }],
+  },
+  sidebarHidden: {
+    transform: [{ translateX: -250 }],
+  },
+  closeSidebarButton: {
+    alignSelf: 'flex-end',
+    marginBottom: 20,
+  },
+  menuItems: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  menuItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 15,
+    paddingHorizontal: 10,
+    borderRadius: 10,
+    backgroundColor: 'black',
+    marginBottom: 10,
+  },
+  menuText: {
+    color: 'white',
+    fontSize: 18,
+    marginLeft: 10,
+  },
   welcomeText: {
     fontSize: 26,
     fontWeight: 'bold',
@@ -246,45 +241,37 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.1,
-    shadowRadius: 6,
-    elevation: 5,
+    shadowRadius: 8,
+    elevation: 4,
   },
   cardTitle: {
     fontSize: 20,
     fontWeight: 'bold',
+    color: '#00008B',
     marginBottom: 10,
-    color: '#333',
   },
   cardContent: {
     fontSize: 16,
+    color: '#333',
     marginBottom: 5,
-    color: '#555',
   },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 20,
+    marginTop: 10,
   },
   button: {
-    backgroundColor: '#FFC107',
-    padding: 15,
-    borderRadius: 30,
     flexDirection: 'row',
-    justifyContent: 'center',
     alignItems: 'center',
-    flex: 1,
-    marginHorizontal: 5,
-    shadowColor: '#4a90e2',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 6,
-    elevation: 3,
+    backgroundColor: '#00008B',
+    padding: 10,
+    borderRadius: 10,
+    width: '48%',
+    justifyContent: 'center',
   },
   buttonText: {
     color: 'white',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: 16,
     marginLeft: 10,
+    fontSize: 16,
   },
 });
